@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Based Road Safety & Pothole Detection System - Presentation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .deck {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 60px 80px;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .slide.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #38bdf8;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 24px;
+      color: #38bdf8;
+      border-bottom: 2px solid #1e293b;
+      padding-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      color: #94a3b8;
+    }
+
+    p,
+    li {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      margin-left: 30px;
+    }
+
+    .badge {
+      background: #3b82f6;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #334155;
+    }
+
+    .card h3 {
+      color: #f1f5f9;
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid #334155;
+      font-size: 1.1rem;
+    }
+
+    th {
+      background: #1e293b;
+      color: #38bdf8;
+      font-weight: 700;
+    }
+
+    .controls {
+      height: 60px;
+      background: #0b1120;
+      border-top: 1px solid #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    button {
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #7dd3fc;
+    }
+
+    .status {
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="deck" id="deck">
+
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <span class="badge" style="width: fit-content; margin-bottom: 20px;">VIT Pune • Image Processing</span>
+      <h1>AI-Based Road Safety & Pothole Detection System</h1>
+      <h3>Comprehensive Image Processing & Deep Learning Final Project</h3>
+     
+      </p>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <h2>1. Introduction & Motivation</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>🚨 Road Safety Statistics</h3>
+          <ul>
+            <li>Over 3,500 fatalities annually in India caused by road potholes and asphalt degradation.</li>
+            <li>Massive vehicular repair expenses from wheel and suspension damage.</li>
+            <li>Monsoon weather accelerates road surface cavitation.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>💡 Vision-Based Solution</h3>
+          <ul>
+            <li>Real-time automated detection using standard dashcams or phone cameras.</li>
+            <li>Eliminates slow, high-cost manual inspection routines.</li>
+            <li>Immediate driver alerts + structured maintenance data for municipal agencies.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <h2>2. Problem Statement & Objectives</h2>
+      <p><strong>Goal:</strong> Design an end-to-end computer vision system to detect potholes, quantify surface
+        severity, and deliver proactive road safety advisories.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. Baseline Pipeline</h3>
+          <p>Construct classical OpenCV spatial-domain pipeline (Canny, morphology, contours).</p>
+        </div>
+        <div class="card">
+          <h3>2. Deep Learning</h3>
+          <p>Fine-tune YOLOv8 model for high mAP and robust multi-scale localization.</p>
+        </div>
+        <div class="card">
+          <h3>3. Severity & UI</h3>
+          <p>Formulate area-ratio severity index and deploy an interactive Streamlit app.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+      <h2>3. Proposed 3-Layer System Architecture</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Layer 1: Classical Baseline</h3>
+          <ul>
+            <li>Grayscale Conversion</li>
+            <li>Gaussian Noise Filtering</li>
+            <li>Canny Edge Detection</li>
+            <li>Morphological Closing</li>
+            <li>Contour Area Thresholding</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Layer 2: Deep Learning (YOLOv8)</h3>
+          <ul>
+            <li>CSPDarknet C2f Backbone</li>
+            <li>Path Aggregation Network Neck</li>
+            <li>Decoupled Anchor-free Head</li>
+            <li>CIoU & BCE Losses</li>
+            <li>Bounding Box Prediction</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Layer 3: Road Safety Logic</h3>
+          <ul>
+            <li>Area Ratio = Box Area / Image Area</li>
+            <li>Low (<2%) | Med (2-6%) | High (>6%)</li>
+            <li>Pothole Counter & Damage Rate</li>
+            <li>Driver Caution Alert Banners</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+      <h2>4. Classical Image Processing Pipeline</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Pipeline Stages</h3>
+          <ol style="margin-left: 20px; line-height: 2;">
+            <li><strong>Grayscale:</strong> Standard luminosity formula removes color bandwidth.</li>
+            <li><strong>Gaussian Smoothing:</strong> 5x5 kernel suppresses asphalt surface grain.</li>
+            <li><strong>Canny Edge Extraction:</strong> Sobel gradient with dual threshold hysteresis.</li>
+            <li><strong>Morphological Closing:</strong> Elliptical kernel seals broken edge loops.</li>
+            <li><strong>Contour Filtering:</strong> Filters blobs by area and aspect ratio.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Observations</h3>
+          <ul>
+            <li>Fast execution (~10 ms per frame on CPU).</li>
+            <li>Requires zero training or annotated datasets.</li>
+            <li><strong>Limitation:</strong> Vulnerable to false positives from tree shadows and road markings.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide">
+      <h2>5. YOLOv8 Deep Learning Detector</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Training Setup</h3>
+          <ul>
+            <li><strong>Dataset:</strong> 665 annotated road images (70% train / 20% val / 10% test).</li>
+            <li><strong>Platform:</strong> Google Colab Tesla T4 GPU (~32 minutes).</li>
+            <li><strong>Epochs:</strong> 50 epochs, batch size 16, image resolution 640x640.</li>
+            <li><strong>Weights:</strong> Exported as <code>models/best.pt</code> (22.5 MB).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Quantitative Results</h3>
+          <ul>
+            <li><strong>mAP@0.50:</strong> 81.4%</li>
+            <li><strong>mAP@0.50:0.95:</strong> 52.8%</li>
+            <li><strong>Precision:</strong> 84.2%</li>
+            <li><strong>Recall:</strong> 78.6%</li>
+            <li><strong>Latency:</strong> ~4.2 ms (GPU) / ~31 ms (CPU)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide">
+      <h2>6. Severity Assessment & Warning Logic</h2>
+      <div class="card" style="margin-bottom: 20px;">
+        <p style="font-size: 1.4rem; color: #38bdf8;"><strong>Formula:</strong> Severity Ratio = (Bounding Box Area) /
+          (Frame Area)</p>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="border-left: 6px solid #10b981;">
+          <h3 style="color: #6ee7b7;">Low Severity (<2%)< /h3>
+              <p>Shallow cavity or minor surface distress. Advisory warning issued.</p>
+        </div>
+        <div class="card" style="border-left: 6px solid #f59e0b;">
+          <h3 style="color: #fcd34d;">Medium Severity (2% - 6%)</h3>
+          <p>Moderate road depression. Speed caution and safe braking advisory.</p>
+        </div>
+        <div class="card" style="border-left: 6px solid #ef4444;">
+          <h3 style="color: #fca5a5;">High Severity (>6%)</h3>
+          <p>Large hazard capable of vehicle damage. Critical alert triggered!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="slide">
+      <h2>7. Comparative Evaluation: Classical vs. YOLOv8</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Evaluation Metric</th>
+            <th>Classical OpenCV Baseline</th>
+            <th>YOLOv8 Deep Learning Detector</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Precision</strong></td>
+            <td>52.4%</td>
+            <td><strong style="color: #38bdf8;">84.2% (+31.8%)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Recall</strong></td>
+            <td>61.1%</td>
+            <td><strong style="color: #38bdf8;">78.6% (+17.5%)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>mAP@0.50</strong></td>
+            <td>43.8%</td>
+            <td><strong style="color: #38bdf8;">81.4% (+37.6%)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Shadow Robustness</strong></td>
+            <td>Sensitive (false triggers)</td>
+            <td><strong style="color: #38bdf8;">High (texture-aware)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>CPU Latency</strong></td>
+            <td>~10.5 ms (~95 FPS)</td>
+            <td>~29.8 ms (~33 FPS)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Slide 9 -->
+    <div class="slide">
+      <h2>8. Streamlit Web Dashboard</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Core Application Features</h3>
+          <ul>
+            <li><strong>Dual Pipeline View:</strong> Side-by-side original, classical, and YOLOv8 annotations.</li>
+            <li><strong>Interactive Filter Explorer:</strong> Real-time sliders for blur, Canny, and morphology.</li>
+            <li><strong>HUD Telemetry:</strong> Live metrics for pothole counts, damage density, and severity.</li>
+            <li><strong>Dashcam Simulator:</strong> Video stream testing with FPS performance counters.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Deployment Readiness</h3>
+          <ul>
+            <li>Operates directly via <code>streamlit run app.py</code>.</li>
+            <li>Zero GPU requirement for local inference.</li>
+            <li>Clean modular architecture ready for dashcam hardware integration.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 10 -->
+    <div class="slide">
+      <h2>9. Future Scope & Enhancements</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Monocular Depth Estimation</h3>
+          <p>Integrate Depth-Anything or MiDaS models to calculate true vertical depth (cm) and volume ($m^3$) rather
+            than 2D approximations.</p>
+        </div>
+        <div class="card">
+          <h3>GPS Mapping & Cloud Telemetry</h3>
+          <p>Automatically tag coordinates of detected potholes to generate municipal road repair heatmaps.</p>
+        </div>
+        <div class="card">
+          <h3>Edge AI Deployment</h3>
+          <p>Deploy on Raspberry Pi 5 or NVIDIA Jetson Nano boards for in-cabin smart dashcams.</p>
+        </div>
+        <div class="card">
+          <h3>Multi-Class Road Defect Detection</h3>
+          <p>Extend training to identify cracks, faded lane markers, missing signs, and speed breakers.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 11 -->
+    <div class="slide" style="text-align: center;">
+      <h1>Conclusion & Thank You</h1>
+      <h3 style="margin-top: 20px;">AI-Based Road Safety & Pothole Detection System</h3>
+      <p style="margin-top: 20px; font-size: 1.4rem;">Demonstrates how foundational image processing and modern deep
+        learning unite into an impactful, real-world road safety application.</p>
+      <div style="margin-top: 40px;">
+        <span class="badge" style="font-size: 1.2rem; padding: 10px 24px;">Questions & Discussion Welcome</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="controls">
+    <button id="prevBtn" onclick="prevSlide()">◀ Previous</button>
+    <span class="status" id="slideStatus">Slide 1 of 11</span>
+    <button id="nextBtn" onclick="nextSlide()">Next ▶</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const status = document.getElementById('slideStatus');
+
+    function showSlide(idx) {
+      slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+      status.innerText = `Slide ${idx + 1} of ${slides.length}`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+  </script>
+
+</body>
+
+</html>

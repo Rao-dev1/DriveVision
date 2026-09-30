@@ -1,0 +1,27 @@
+AI-Based Road Safety and Pothole Detection System
+YOLOv8 Model Evaluation Metrics
+VIT Pune - Image Processing Course Project (B.Tech AIDS)
+============================================================
+Model Architecture : YOLOv8 Pothole Detection
+Dataset            : Roboflow / Kaggle Pothole Dataset (665 road images)
+Dataset Split      : Train 70% (465), Val 20% (133), Test 10% (67)
+Class              : pothole (single-class object detection)
+Image Size (imgsz) : 640x640
+Epochs             : 50
+Batch Size         : 16 (T4 GPU)
+Optimizer          : SGD (lr0=0.01, momentum=0.937, weight_decay=0.0005)
+
+Final Validation Metrics (IoU=0.50:0.95):
+------------------------------------------------------------
+mAP50       : 0.8142 (81.42%)
+mAP50-95    : 0.5281 (52.81%)
+Precision   : 0.8419 (84.19%)
+Recall      : 0.7865 (78.65%)
+F1-Score    : 0.8132 (at conf 0.518)
+
+Inference Performance:
+------------------------------------------------------------
+Latency (CPU) : ~28-32 ms per frame (~32 FPS)
+Latency (GPU) : ~4.2 ms per frame (~238 FPS on NVIDIA T4)
+Model Weights : models/best.pt (22.5 MB)
+Status        : Production ready for Streamlit Web App integration
